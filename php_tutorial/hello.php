@@ -185,3 +185,38 @@
         $i++;
     }    
 ?>
+
+<?php
+    // この下にfor文を書いてください
+    for($i = 1; $i <= 1000; $i++){
+        if($i == 10){
+            break;
+        }
+        echo $i.'<br>';
+    }
+?>
+
+<?php //continue文 スキップ処理
+
+    // この下にfor文を書いてください
+    for($i = 1; $i <= 10; $i++){
+        if($i % 3 == 0){
+            continue;
+        }
+        echo $i.'<br>';
+    }
+?>
+
+<?php //foreach文
+    $scores = array(
+        '数学' => 70,
+        '英語' => 90,
+        '国語' => 80
+        );
+
+    // この下にforeach文を書いてください
+    foreach($scores as $key => $value){
+        echo $key.'は'.$value.'点です。';
+    }
+?>
+
