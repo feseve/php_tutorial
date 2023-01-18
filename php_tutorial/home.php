@@ -46,7 +46,7 @@
                             );
                     ?>
                     <select name="category">
-                        <option value="未選択">選択してください</option>
+                        <option value="未選択">選択してください!</option>
                         <?php
                             foreach($types as $type){
                                 echo "<option value='{$type}'>{$type}</option>";
