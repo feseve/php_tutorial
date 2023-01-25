@@ -9,9 +9,10 @@
             $this->price = $price;
             $this->image = $image;
         }
-    
-        public function hello() {
-            echo '私は'.$this->name.'です';
+        
+        //税込価格にする関数
+        public function getTaxIncludedPrice() {
+            return floor($this->price * 1.08);
         }
     }
 ?>
