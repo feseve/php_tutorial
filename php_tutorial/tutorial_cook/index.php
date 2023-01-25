@@ -13,16 +13,21 @@
     <body>
         <div class="menu-wrapper container">
             <h1 class="logo">Café Progate</h1>
-            <div class="menu-items">
-            <!-- 配列$menusの要素を変数$menuとするforeach文を書いてください -->
-            <?php foreach($menus as $menu): ?>
-                <div class="menu-item">
-                    <img src="<?php echo $menu->image ?>">
-                    <h3 class="menu-item-name"><?php echo $menu->name ?></h3>
-                    <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
+            <form action="confirm.php" method="post">
+                <div class="menu-items">
+                <!-- 配列$menusの要素を変数$menuとするforeach文 -->
+                    <?php foreach($menus as $menu): ?>
+                        <div class="menu-item">
+                            <img src="<?php echo $menu->getImage() ?>">
+                            <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+                            <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
+                            注文数: <input type="text" value="0" name="<?php echo $menu->getName() ?>">
+                            <span>個</span>
+                        </div>
+                    <?php endforeach ?>
                 </div>
-            <?php endforeach ?>
-            </div>
+                <input type="submit" value="送信する">
+            </form>
         </div>
     </body>
 </html>

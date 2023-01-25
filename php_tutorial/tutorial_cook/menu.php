@@ -1,8 +1,9 @@
 <?php
     class Menu {
-        public $name;
-        public $price;
-        public $image;
+        private $name;
+        private $price;
+        private $image;
+        private $orderCount;
     
         public function __construct($name, $price, $image) {
             $this->name = $name;
@@ -13,6 +14,22 @@
         //税込価格にする関数
         public function getTaxIncludedPrice() {
             return floor($this->price * 1.08);
+        }
+
+        //カプセル化
+        public function getName(){
+            return $this->name;
+        }
+        public function getImage(){
+            return $this->image;
+        }
+
+        //セッター化
+        public function getOrderCount(){
+            return $this->orderCount;
+        }
+        public function setOrderCount($orderCount){
+            $this->orderCount = $orderCount;
         }
     }
 ?>
