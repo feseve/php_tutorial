@@ -31,5 +31,10 @@
         public function setOrderCount($orderCount){
             $this->orderCount = $orderCount;
         }
+
+        //トータル金額をする関数
+        public function getTotalPrice(){
+            return $this->getTaxIncludedPrice() * $this->getOrderCount();
+        }
     }
 ?>
