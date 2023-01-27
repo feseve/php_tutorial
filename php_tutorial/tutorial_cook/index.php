@@ -1,5 +1,6 @@
 <?php
     require_once ('data.php');
+    require_once ('menu.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
     <body>
         <div class="menu-wrapper container">
             <h1 class="logo">Café Progate</h1>
+            <h3>メニュー<?php echo Menu::$count ?>品</h3>
             <form action="confirm.php" method="post">
                 <div class="menu-items">
                 <!-- 配列$menusの要素を変数$menuとするforeach文 -->
