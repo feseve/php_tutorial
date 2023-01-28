@@ -5,8 +5,7 @@
     $juice = new Drink(
         'JUICE',
         600,
-        'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png'
-    );
+        'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/juice.png');
     $coffee = new Drink(
         'COFFEE',
         400,
@@ -20,7 +19,8 @@
         1200,
         'https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/pasta.png');
 
-    $juice->setOrderCount(2);
+    $juice->setType('アイス');
+    $coffee->setType('ホット');
 
     // 配列の中に4つのインスタンスを順に入れて、変数$menusに代入
     $menus = array($juice,$coffee,$curry,$pasta);
