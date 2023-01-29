@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <title>Café Progate</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -25,7 +25,9 @@
                             <?php if($menu instanceof Drink): ?>
                                 <p class="menu-item-type"><?php echo $menu->getType() ?></p>
                             <?php else: ?>
-                                <p>辛さ: <?php echo $menu->getSpiciness() ?></p>
+                                <?php for($i=0; $i<$menu->getSpiciness(); $i++): ?>
+                                    <img class="icon-spiciness" src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/chilli.png" alt="辛さレベル">
+                                <?php endfor ?>
                             <?php endif ?>
                             <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?>（税込）</p>
                             注文数: <input type="text" value="0" name="<?php echo $menu->getName() ?>">
