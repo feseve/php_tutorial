@@ -1,12 +1,12 @@
 <?php
     class Menu {
-        //個々のインスタンスが持つプロパティ
-        private $name;
-        private $price;
-        private $image;
+        //個々のインスタンスが持つプロパティ protected:クラス内、子クラス内のアクセス可
+        protected $name;
+        protected $price;
+        protected $image;
         private $orderCount;
         //個々のインスタンスのデータに関係ないMenuクラスが持つデータ(statics)
-        private static $count = 0;
+        protected static $count = 0;
     
         public function __construct($name, $price, $image) {
             $this->name = $name;
