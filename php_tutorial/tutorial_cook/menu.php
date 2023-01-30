@@ -47,5 +47,14 @@
         public static function getCount(){
             return self::$count;
         }
+
+        //メニューの配列から特定の名前を持つメニューを取り出す
+        public static function findByName($menus, $name){
+            foreach($menus as $menu){
+                if($menu->getName() == $name){
+                    return $menu;
+                }
+            }
+        }
     }
 ?>
