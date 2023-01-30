@@ -8,7 +8,7 @@
     <head>
         <meta charset="utf-8">
         <title>Café Progate</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <link href='https://fonts.googleapis.com/css?family=Pacifico|Lato' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -17,11 +17,12 @@
             <h3>メニュー<?php echo Menu::getCount() ?>品</h3>
             <form action="confirm.php" method="post">
                 <div class="menu-items">
-                <!-- 配列$menusの要素を変数$menuとするforeach文 -->
                     <?php foreach($menus as $menu): ?>
                         <div class="menu-item">
                             <img src="<?php echo $menu->getImage() ?>">
-                            <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+                            <a href="show.php?name=<?php echo $menu->getName() ?>">
+                                <h3 class="menu-item-name"><?php echo $menu->getName() ?></h3>
+                            </a>
                             <?php if($menu instanceof Drink): ?>
                                 <p class="menu-item-type"><?php echo $menu->getType() ?></p>
                             <?php else: ?>
