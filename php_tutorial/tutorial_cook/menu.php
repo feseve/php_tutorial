@@ -56,5 +56,15 @@
                 }
             }
         }
+
+        public function getReviews($reviews){
+            $reviewsForMenu = array();
+            foreach($reviews as $review){
+                if($menu->getMenuName() == $this->name){
+                    $reviewsForMenu[] = $review;
+                }
+            }
+            return reviewsForMenu;
+        }
     }
 ?>
