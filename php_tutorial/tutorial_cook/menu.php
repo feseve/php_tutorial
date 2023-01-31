@@ -57,6 +57,7 @@
             }
         }
 
+        //メニューに対するレビューを取り出す
         public function getReviews($reviews){
             $reviewsForMenu = array();
             foreach($reviews as $review){
