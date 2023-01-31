@@ -1,6 +1,7 @@
 <?php
     require_once ('drink.php');
     require_once ('food.php');
+    require_once ('review.php');
 
     $juice = new Drink(
         'JUICE',
@@ -27,6 +28,18 @@
         1,
     );
 
+    $review1 = new Review(
+        $juice->getName(),
+        '果肉たっぷりのオレンジジュースです！',
+    );
+
+    $review2 = new Review(
+        $curry->getName(),
+        '具がゴロゴロしていてとてもおいしいです',
+    );
+
     // 配列の中に4つのインスタンスを順に入れて、変数$menusに代入
     $menus = array($juice,$coffee,$curry,$pasta);
+
+    $reviews = array($review1, $review2);
 ?>

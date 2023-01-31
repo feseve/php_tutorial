@@ -26,8 +26,19 @@
                 <?php endfor ?>
             <?php endif ?>
             <p class="price">¥<?php echo $menu->getTaxIncludedPrice() ?></p>
+            <div class="review-list-wrapper">
+                <div class="review-list">
+                    <div class="review-list-title">
+                        <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
+                        <h4>レビュー一覧</h4>
+                    </div>
+                    <?php foreach($reviewsForMenu as $review): ?>
+                        <h3><?php echo $review->getMenuName() ?></h3>
+                        <p><?php echo $review->getBody() ?></p>
+                    <?php endforeach ?>
+                </div>
+            </div>
             <a href="index.php">← メニュー一覧へ</a>
-            
         </div>
     </body>
 </html>
