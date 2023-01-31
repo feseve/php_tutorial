@@ -3,6 +3,7 @@
     require_once ('data.php');
     $menuName = $_GET['name'];
     $menu = Menu::findByName($menus, $menuName);
+    $menuReviews = $menu->getReviews($reviews);
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +33,7 @@
                         <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/php/review.png" class='icon-review'>
                         <h4>レビュー一覧</h4>
                     </div>
-                    <?php foreach($reviewsForMenu as $review): ?>
-                        <h3><?php echo $review->getMenuName() ?></h3>
+                    <?php foreach($menuReviews as $review): ?>
                         <p><?php echo $review->getBody() ?></p>
                     <?php endforeach ?>
                 </div>

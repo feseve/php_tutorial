@@ -61,11 +61,11 @@
         public function getReviews($reviews){
             $reviewsForMenu = array();
             foreach($reviews as $review){
-                if($menu->getMenuName() == $this->name){
+                if($review->getMenuName() == $this->name){
                     $reviewsForMenu[] = $review;
                 }
             }
-            return reviewsForMenu;
+            return $reviewsForMenu;
         }
     }
 ?>
