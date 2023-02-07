@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//ブログ一覧画面(nameをつけることでURLを変更しても問題ない)
+Route::get('/', 'BlogController@showList')->name('blogs');
